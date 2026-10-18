@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1422">
+  <title>Hotel Monitor — 50 өрөө</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="header">
+    <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5l8-3 8 3v16M2 21h20M9 21v-5h6v5M8 7h1m6 0h1M8 11h1m6 0h1"/></svg></div><div><h1>Hotel Monitor</h1><p class="muted small">50 өрөөний хяналтын систем</p></div></div>
+    <div class="header-status"><span class="header-caption">Хяналтын самбар</span><span class="pill" id="mode-pill">LIVE</span></div>
+  </header>
+  <div class="banner">ДЕМО: Энэ файл бодит мэдрэгчтэй холбогдоогүй. Өрөөний төлөв, хугацаа болон түүх нь жишээ өгөгдөл.</div>
+  <section id="dashboard">
+    <section class="overview" aria-label="Хяналтын самбарын танилцуулга">
+      <img class="overview-image" src="assets/hotel-lobby.png" alt="" width="1916" height="821" fetchpriority="high">
+      <div class="overview-content"><span class="eyebrow">ТАНЫ ЗОЧИД БУУДАЛ · НЭГ ДЭЛГЭЦЭЭС</span><h2>Өрөө бүр.<br>Нэг дор.</h2><p>Өрөөнүүдийн төлөв, ашиглалтын түүхийг<br class="desktop-break"> хялбархан хянаарай.</p></div>
+      <span class="overview-tag"><span></span>50 өрөөний хяналт</span>
+    </section>
+    <div class="stats" id="main-stats" aria-label="Өрөөнүүдийн төлөв"></div>
+    <section class="card" aria-label="Огноо болон цаг сонгох">
+      <div class="date-bar"><div><div class="control-title">Огноо, цаг сонгох</div><p class="muted small">Сүүлийн 30 хоногийн түүх</p></div><button class="button" id="live-btn" type="button">◉ Одоо</button></div>
+      <div style="margin-top:13px" class="date-field"><label for="main-date">Өдөр</label><input id="main-date" type="date"></div>
+      <div class="time-head"><div class="bigtime" id="main-time">Яг одоо</div><span class="time-desc" id="main-time-desc">Одоогийн хяналт</span></div>
+      <input class="slider" type="range" id="main-slider" min="0" max="1435" step="5" value="640" aria-label="Цаг гүйлгэх">
+      <div class="ticks"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div>
+    </section>
+    <div class="sectionhead"><div><p class="eyebrow">ӨРӨӨНҮҮДИЙН ТОЙМ</p><h2>Бүх өрөөний төлөв</h2></div><span class="muted small">50 / 50 өрөө</span></div>
+    <div id="room-groups"></div>
+  </section>
+  <section id="detail" class="hidden">
+    <div class="backrow"><button class="button" id="back-btn" type="button">← Dashboard руу буцах</button><span class="pill history" id="detail-status">Сул</span></div>
+    <div class="detail-title"><h1 id="detail-room">Өрөө 101</h1><p class="muted small">Зөвхөн сонгосон өрөөний ашиглалтын түүх</p></div>
+    <div class="detail-controls"><div class="date-field"><label for="detail-date">Түүх харах өдөр</label><input id="detail-date" type="date"></div></div>
+    <div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr))" id="detail-stats"></div>
+    <div class="card detail-card"><h2 style="margin-bottom:15px">24 цагийн Timeline</h2><div class="timeline" id="timeline"></div><div class="ticks" style="margin-top:9px"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div><div class="legend"><span class="legend-item"><i class="legend-dot" style="background:var(--green)"></i>Хүнтэй</span><span class="legend-item"><i class="legend-dot" style="background:#b9c5d3"></i>Сул</span><span class="legend-item"><i class="legend-dot" style="background:var(--red)"></i>Offline</span></div></div>
+    <div class="card"><div class="log-title"><h2>Үйл явдлын түүх</h2><button class="button" style="font-size:12px;padding:7px 10px" id="toggle-log" type="button">Бүгдийг харах</button></div><div id="room-log"></div></div>
+    <button type="button" class="button" style="width:100%;margin-top:15px" id="bottom-back">← Бүх өрөө рүү буцах</button>
+  </section>
+  <p class="foot">Local HTML prototype · Responsive · Offline ажиллана · Бодит өгөгдөл биш</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
